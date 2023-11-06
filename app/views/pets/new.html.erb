@@ -1,0 +1,45 @@
+<h1>動物</h1>
+<h3>新規投稿ページ</h3>
+<%= form_for @pet do |f| %>
+
+# データ型がstringで自由記述の入力フォーム
+  <div class="field">
+    <%= f.label :petname %>
+    <%= f.text_field :name, :size => 30 %>
+  </div>
+
+# データ型がstringで自由記述の入力フォーム
+<div class="field">
+<%= f.label :petgenre %>
+<%= f.text_field :genre, :size => 30 %>
+</div>
+
+# データ型がstringで自由記述の入力フォーム
+<div class="field">
+<%= f.label :petkind %>
+<%= f.text_field :kind, :size => 30 %>
+</div>
+
+
+# データ型がintegerで数字のみを入力するフォーム
+  <div class="field">
+    <%= f.label :petage  %>
+    <%= f.number_field :age, :size => 10 %>
+  </div>
+
+# データ型がtextで自由記述の入力フォーム
+  <div class="field">
+    <%= f.label :problem  %>
+    <%= f.text_area :detail, :size => "30x2" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :image %>
+    <%= f.file_field :image %>
+  </div>
+ 
+
+  <%= f.submit "投稿する" %>
+<% end %>
+
+<%= link_to "一覧に戻る", pets_path %>
